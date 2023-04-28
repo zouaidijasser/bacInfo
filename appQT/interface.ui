@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>972</width>
+    <height>581</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background : #00b4d8 ;
+color : #222;
+font-size : 27px;</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>371</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">text-decoration : underline;
+text-size : 35px;</string>
+   </property>
+   <property name="text">
+    <string>Voyage de divertissements</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Matricule :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nom et Prénom :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>361</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nombre d'heures d'absence :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>150</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Fonction :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Région de voyage :</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ajout">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>300</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #ffd23f;</string>
+   </property>
+   <property name="text">
+    <string>Ajouter</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="aff">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>300</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #ffd23f;</string>
+   </property>
+   <property name="text">
+    <string>AfficherEmp</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="regV">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>210</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #fff ;
+color : #222;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Tunis</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sud de la Tunisie</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nord-ouest de la Tunisie</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Djerba</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="mat">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>70</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #fff ;</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rIng">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>160</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size : 25px;</string>
+   </property>
+   <property name="text">
+    <string>Ingénieur </string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rOuv">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>170</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size : 25px;</string>
+   </property>
+   <property name="text">
+    <string>Ouvrier</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>90</y>
+     <width>281</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color : #d1d1d1d1;</string>
+   </property>
+   <property name="text">
+    <string>Destination de voyage :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="destV">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>160</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #d1dddddd;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="nompnom">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>120</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #fff ;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="nbH">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>250</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #fff ;</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>360</y>
+     <width>511</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #fff;
+font-size : 15px;</string>
+   </property>
+   <column>
+    <property name="text">
+     <string>Matricule</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nom et Pnom </string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Fonction</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Région</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
