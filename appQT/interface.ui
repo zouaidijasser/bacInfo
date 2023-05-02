@@ -211,22 +211,6 @@ color : #222;</string>
     <string>Ouvrier</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>90</y>
-     <width>281</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color : #d1d1d1d1;</string>
-   </property>
-   <property name="text">
-    <string>Destination de voyage :</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="destV">
    <property name="geometry">
     <rect>
@@ -269,12 +253,12 @@ color : #222;</string>
     <string notr="true">background : #fff ;</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QTableWidget" name="tw">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>360</y>
-     <width>511</width>
+     <width>661</width>
      <height>211</height>
     </rect>
    </property>
@@ -284,29 +268,45 @@ font-size : 15px;</string>
    </property>
    <column>
     <property name="text">
-     <string>Matricule</string>
+     <string>mat</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>Nom et Pnom </string>
+     <string>nom et prenom</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>Fonction</string>
+     <string>fonction</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>Région</string>
+     <string>region</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>Nombre</string>
+     <string>nbh</string>
     </property>
    </column>
+  </widget>
+  <widget class="QPushButton" name="btn">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>100</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : #d1dddddd;</string>
+   </property>
+   <property name="text">
+    <string>Destination de voyage</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -20,10 +20,11 @@ def num (ch) :
         if ch[i] > '9' or ch[i] < '0' :
             test = False
         else :
-            i =+ 1
+            i += 1
     return test
 
-def plus_region (f) :
+def plus_region () :
+    f = open ('voyage.dat','rb')
     test = True
     i = 0
     j = 0
@@ -32,12 +33,13 @@ def plus_region (f) :
     while (test) :
         try :
             e = load (f)
+            print(e['regV'])
             if (e['regV']=='Tunis') :
-                i =+ 1
+                i += 1
             elif (e['regV']=='Sud de la Tunisie') :
-                j =+ 1
+                j += 1
             elif (e['regV']=='Nord-ouest de la Tunisie') :
-                k =+ 1
+                k += 1
             else :
                 l += 1
         except :
@@ -57,44 +59,44 @@ def plus_region (f) :
         w.destV.setText('Nord')
     else :
         w.destV.setText('Djerba')
+    f.close()
 
 
 
     
 def ajouter():
     f = open ('voyage.dat','ab')
-    e = {}
     mat = w.mat.text()
     nomETprenom = w.nompnom.text()
-    rIng = w.rIng
-    rOuv = w.rOuv
-    if rIng.isChecked :
-        fct = 'Ingénieur'
-    else :
-        fct = 'Ouvrier'
+    r1 = w.rIng
+    r2 = w.rOuv
     regV = w.regV.currentText()
     nbH = w.nbH.text()
     if not(alphanum(mat)) or len(mat) != 10 :
-        print(alphanum(mat))
         QMessageBox.critical (w,'error','le mat doit etre un chaine alphanum de 10 caracteres ')
     elif len(nomETprenom) > 70 or len(nomETprenom) < 5 :
         QMessageBox.critical(w,'error','le nom et prenom doit etre un chaine entre 5 et 70 ')
-    elif not(rIng.isChecked) and not(rOuv.isChecked) :
-        QMessageBox.critical(w,'error','selecte un fonction ')
-    elif w.rOuv.currentIndex() < 0 :
-        QMessageBox.critical (w,'error','select un region de voyage ')
-    elif num (nbH) or int(nbH) > 10 :
+    elif r1.isChecked() == False and r2.isChecked() == False :
+        QMessageBox.critical(w,'error','select un fonction ')
+    elif not(num (nbH)) or nbH == '' :
         QMessageBox.critical(w,'error','nb heure doit etre un entie supp de 10 ')
     else :
+        if r1.isChecked() :
+            fct = 'Ingénieur'
+        else :
+            fct = 'Ouvrier'
+        e = {}
+        print(mat)
+        print(nomETprenom)
+        print(fct)
+        print(regV)
+        print(nbH)
         e['mat'] = mat
-        e['nomEtprenom'] = nomETprenom
+        e['nomETprenom'] = nomETprenom
         e['fct'] = fct
         e['regV'] = regV
         e['nbH'] = nbH
         dump(e,f)
-        f.close()
-        f = open('voyage.dat','rb')
-        plus_region (f) # Procedur pour cherhcer le plus region choisi
         f.close()
         QMessageBox.information (w,'ajouter','le emp est ajouté ')
         w.mat.setText('')
@@ -114,13 +116,14 @@ def afficher () :
     i = 0
     while test :
         try :
-            e = f.load ()
-            w.tw.setItem(i,0,QTableWidgetItem(str(e['mat'])))
-            w.tw.setItem(i,1,QTableWidgetItem(str(e['nomETprenom'])))
-            w.tw.setItem(i,2,QTableWidgetItem(str(e['fct'])))
-            w.tw.setItem(i,3,QTableWidgetItem(str(e['regV'])))
-            w.tw.setItem(i,4,QTableWidgetItem(str(e['nbH'])))
-            i =+ 1
+            e = load(f)
+            print(e)
+            w.tw.setItem(i,0, QTableWidgetItem (e['mat']))
+            w.tw.setItem(i,1, QTableWidgetItem (e['nomETprenom']))
+            w.tw.setItem(i,2, QTableWidgetItem (e['fct']))
+            w.tw.setItem(i,3, QTableWidgetItem (e['regV']))
+            w.tw.setItem(i,4, QTableWidgetItem (e['nbH']))
+            i += 1
         except :
             test = False
     f.close()
@@ -133,7 +136,10 @@ app = QApplication([])
 w = loadUi("interface.ui")
 w.show()
 w.mat.setFocus()
+w.tw.setColumnCount(5)
+w.tw.setRowCount(60)
 f = open ('voyage.dat','wb')
 w.ajout.clicked.connect(ajouter)
 w.aff.clicked.connect(afficher)
+w.btn.clicked.connect(plus_region) # Procedur pour cherhcer le plus region choisi
 app.exec_()
